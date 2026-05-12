@@ -16,8 +16,9 @@ function App() {
     setErrorMessage('')
 
     try {
-      // Llamada al backend
-      const response = await fetch('http://localhost:8787/waitlist', {
+      // Llamada al backend usando variables de entorno de Vite
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8787'
+      const response = await fetch(`${apiUrl}/waitlist`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

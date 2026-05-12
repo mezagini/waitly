@@ -6,7 +6,7 @@ const app = new Hono()
 
 // Configurar CORS para permitir solicitudes desde el frontend local y producción
 app.use('/*', cors({
-  origin: ['http://localhost:5173', 'http://127.0.0.1:5173'], // Actualizar con URL de prod cuando se despliegue
+  origin: '*', // Permitir cualquier origen (puedes restringirlo luego a tu dominio .pages.dev)
   allowMethods: ['GET', 'POST', 'OPTIONS'],
   allowHeaders: ['Content-Type'],
   maxAge: 86400,
